@@ -1,0 +1,45 @@
+#importação da biblioteca para gerar numeros pseudo randomicos
+import random
+import pyfiglet
+
+
+#conta as tentativas do jogador
+tentativas = 0
+
+while True:
+    try:
+        resultado = pyfiglet.figlet_format("Bem Vindo")
+        print(resultado)
+        print("ao jogo de adivinhar numero")
+        #gerar os numeros
+        random_int = random.randint(1, 10)
+        while True:
+            palpite = int(input("de seu palpite: "))
+            tentativas += 1
+            #confere se o numero ta certo
+            if palpite == random_int:
+                print("parabéns você passou")
+                print(f"voce acertou em {tentativas}! o numero era {random_int}!")    
+                jogar = str(input("você quer jogar de novo? y/n "))
+                if jogar == "y":
+                    tentativas = 0
+                    random_int = random.randint(1, 10)
+                    break
+                else:
+                    break
+            elif palpite < random_int:#pergunta se quer continuar o jogo
+                print("muito baixo, tente denovo")
+            elif palpite > random_int:
+                print("muito alto, tente novamente")
+        if jogar == "n":
+            break
+                    
+    except ValueError:#não deixa inserir valores validos
+        print("digite apenas numeros")
+
+    
+
+
+
+
+

@@ -1,0 +1,12 @@
+@startuml projetoUML
+class Triangulo{
+    + lado_A:float
+    + Lado_B:float
+    + lado_C:float
+    + area(): float
+    
+}
+
+
+
+@enduml
